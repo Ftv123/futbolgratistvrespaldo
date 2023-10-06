@@ -678,24 +678,24 @@ img[src="/img/logo-starplus.png"]:hover::before {
 
 <script>
   // Cargar el archivo JSON de productos
-  fetch('productos.json')
+  fetch('response.json')
     .then(response => response.json())
     .then(data => {
-      const productosDiv = document.getElementById('productos');
+      const productosDiv = document.getElementById('response');
       
       // Iterar a través de los productos y mostrarlos en la página
       data.forEach(producto => {
         const productoHTML = `
-          <div class="producto">
-            <a href="${producto.enlace}">
-              <img src="${producto.imagen}" alt="${producto.nombre}">
-              <h3>${producto.nombre}</h3>
-              <p>Precio: $${producto.precio.toFixed(2)}</p>
-              <p>${producto.descripcion}</p>
+          <div class="response">
+            <a href="${response.enlace}">
+              <img src="${response.imagen}" alt="${response.nombre}">
+              <h3>${response.nombre}</h3>
+              <p>Precio: $${response.precio.toFixed(2)}</p>
+              <p>${response.descripcion}</p>
             </a>
           </div>
         `;
-        productosDiv.innerHTML += productoHTML;
+        responseDiv.innerHTML += responseHTML;
       });
     })
     .catch(error => {
