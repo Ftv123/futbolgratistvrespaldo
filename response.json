@@ -4,13 +4,16 @@
     "nombre": "Camiseta",
     "precio": 20.00,
     "descripcion": "Una camiseta cómoda en varios colores.",
-    "imagen": "camiseta.jpg"
+    "imagen": "cerro.jpg",
+    "enlace": "https://futbolgratistv.onrender.com/"
   },
   {
     "id": 2,
     "nombre": "Pantalones",
     "precio": 40.00,
     "descripcion": "Pantalones elegantes para ocasiones especiales.",
-    "imagen": "pantalones.jpg"
+    "imagen": "pantalones.jpg",
+    "enlace": "enlace-pantalones.html"
   }
 ]
+
