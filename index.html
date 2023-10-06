@@ -676,21 +676,30 @@ img[src="/img/logo-starplus.png"]:hover::before {
 
 
 
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=RVNQTjJfQXJn"><div class="card"><img src="https://depor.com/resizer/Iy1IOG9gsF-VvRS9LQhSrWqkFL8=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/C75BTSGZJZG5XAFKKUV2U2WK5Q.png" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-BARCELONA VS ANTWER</h3></div></div></a></div></div>
-
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=RVNQTjJIRA"><div class="card"><img src="https://depor.com/resizer/0zu2byFbNRyvHp_UIQSNaKgmZGI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/VX53PFQYW5B3TKRTDUXPTRD4FY.png" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-MANCHESTER CITY VS ESTRELLA ROJA</h3></div></div></a></div></div>
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=RVNQTjM"><div class="card"><img src="https://cdn.clarosports.com/clarosports/2023/09/shakhtar-donetsk-vs-porto-en-vivo-120707-1024x576.jpg" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-SHAKTAR VS PORTO</h3></div></div></a></div></div>
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=RVNQTjJIRA"><div class="card"><img src="https://depor.com/resizer/0zu2byFbNRyvHp_UIQSNaKgmZGI=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/VX53PFQYW5B3TKRTDUXPTRD4FY.png" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-MANCHESTER CITY VS ESTRELLA ROJA</h3></div></div></a></div></div>
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=Rm94U3BvcnRzMkhE"><div class="card"><img src="https://depor.com/resizer/ZSwowtKYq5ik2CUWP3FVK7D8l1s=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/HQ3R6ZAUVZCUNKFLNJO2AQDUNA.png" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-PSG VS BORUSSIA DORTMUND</h3></div></div></a></div></div>
-
-<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="https://futbolgratistv.onrender.com/cvatt.html?get=Rm94U3BvcnRz"><div class="card"><img src="https://cdn.thestatszone.com/uploads/thumbnails/_r169l/ucl_2324_Lazio_Vs_Atletico_Madrid.jpg" class="card-img-top" alt="image"><div class="card-body"><h3>CHAMPIONS LEAGUE-LAZIO VS ATLETICO DE MADRID</h3></div></div></a></div></div>
-
-
+<script>
+  // Cargar el archivo JSON de productos
+  fetch('productos.json')
+    .then(response => response.json())
+    .then(data => {
+      const productosDiv = document.getElementById('productos');
+      
+      // Iterar a través de los productos y mostrarlos en la página
+      data.forEach(producto => {
+        const productoHTML = `
+          <div class="producto">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h3>${producto.nombre}</h3>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <p>${producto.descripcion}</p>
+          </div>
+        `;
+        productosDiv.innerHTML += productoHTML;
+      });
+    })
+    .catch(error => {
+      console.error('Error al cargar los productos:', error);
+    });
+</script>
 
 
 
